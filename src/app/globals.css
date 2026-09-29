@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-outfit);
+  --font-display: var(--font-archivo);
+}
+
+@theme {
+  --color-ink: #000000;
+  --color-navy: #0f1e36;
+  --color-navy-soft: #1c2c47;
+  --color-cream: #fcf2e8;
+  --color-mist: #f8f8f8;
+  --color-line: #d8d8d8;
+  --color-muted: #525252;
+
+  --radius-card: 24px;
+
+  --container-site: 1280px;
+
+  --animate-kenburns: kenburns 14s ease-in-out infinite alternate;
+  --animate-marquee: marquee 40s linear infinite;
+
+  @keyframes kenburns {
+    from {
+      transform: scale(1) translate(0, 0);
+    }
+    to {
+      transform: scale(1.15) translate(-2%, -2%);
+    }
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: 4rem;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading), system-ui, sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
