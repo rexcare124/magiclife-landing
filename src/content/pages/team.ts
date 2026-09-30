@@ -22,7 +22,7 @@ export const team = {
     title: "Guiding the agency and its members",
     members: [
       {
-        name: "Daniel Hart",
+        name: "Xinrou Li",
         role: "Founder & CEO",
         bio: "Started MagicLife to open software work up to everyone. Leads strategy, partnerships and member growth.",
         image: photo(9),
@@ -36,7 +36,7 @@ export const team = {
         socials: [{ label: "LinkedIn", href: "#" }],
       },
       {
-        name: "Richard Moss",
+        name: "David Alejerous",
         role: "Chief Technology Officer",
         bio: "Twenty years of shipping software. Oversees engineering quality across every client project.",
         image: photo(5),
@@ -49,7 +49,7 @@ export const team = {
     title: "Builders, designers and member champions",
     members: [
       {
-        name: "Marco Bellini",
+        name: "Baldino Aguilar",
         role: "Lead Developer",
         bio: "Architects web platforms and APIs for our fastest-growing clients.",
         image: photo(1),
