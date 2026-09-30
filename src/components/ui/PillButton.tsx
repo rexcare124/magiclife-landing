@@ -1,13 +1,13 @@
 import clsx from "clsx";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
-type Variant = "gold" | "light" | "dark" | "green";
+type Variant = "gold" | "light" | "dark";
 
 const styles: Record<Variant, { pill: string; dot: string }> = {
   gold: { pill: "bg-linear-to-r from-gold-light to-gold text-ink", dot: "bg-ink text-gold-light" },
   light: { pill: "bg-white text-ink", dot: "bg-ink text-gold-light" },
   dark: { pill: "bg-ink text-white", dot: "bg-gold text-ink" },
-  green: { pill: "bg-forest text-white", dot: "bg-gold text-ink" },
 };
 
 type PillButtonProps = {
@@ -19,9 +19,10 @@ type PillButtonProps = {
 
 export function PillButton({ href, children, variant = "gold", className }: PillButtonProps) {
   const s = styles[variant];
+  const Tag = href.startsWith("/") ? Link : "a";
 
   return (
-    <a
+    <Tag
       href={href}
       className={clsx(
         "group inline-flex items-center gap-4 rounded-full py-2 pl-5 pr-2 text-base font-medium transition-transform duration-300 hover:-translate-y-0.5 sm:pl-6",
@@ -45,6 +46,6 @@ export function PillButton({ href, children, variant = "gold", className }: Pill
           className="absolute size-4 -translate-x-6 translate-y-6 transition-transform duration-300 group-hover:translate-x-0 group-hover:translate-y-0"
         />
       </span>
-    </a>
+    </Tag>
   );
 }

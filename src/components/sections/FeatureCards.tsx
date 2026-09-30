@@ -36,7 +36,7 @@ export function FeatureCards() {
 
         <Reveal
           delay={0.1}
-          className="flex min-h-[22rem] flex-col items-center justify-center gap-6 rounded-card border border-gold/30 bg-linear-to-br from-forest to-forest-soft px-8 py-12 text-center text-white"
+          className="flex min-h-[22rem] flex-col items-center justify-center gap-6 rounded-card border border-gold/30 bg-linear-to-br from-ink to-charcoal px-8 py-12 text-center text-white"
         >
           <h3 className="text-gold-gradient font-heading text-2xl font-medium tracking-[0.01em] sm:text-[1.75rem]">{highlight.title}</h3>
           <p className="max-w-xs leading-relaxed text-white/85">{highlight.body}</p>

@@ -10,15 +10,15 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { capabilities } from "@/content/site";
 
-export function CapabilityAccordion() {
+export function CapabilityAccordion({ className, divider = true }: { className?: string; divider?: boolean }) {
   const [active, setActive] = useState(0);
   const baseId = useId();
   const item = capabilities.items[active];
 
   return (
-    <section className="bg-forest pb-20 text-white lg:pb-28">
+    <section className={clsx("bg-ink pb-20 text-white lg:pb-28", className)}>
       <Container>
-        <div className="border-t border-gold/20 pt-16 lg:pt-20">
+        <div className={clsx("pt-16 lg:pt-20", divider && "border-t border-gold/20")}>
           <Reveal className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <SectionHeading className="max-w-md">{capabilities.title}</SectionHeading>
             <PillButton href={capabilities.cta.href} className="self-start sm:self-auto">
@@ -80,7 +80,7 @@ export function CapabilityAccordion() {
                     {i === active && (
                       <motion.span
                         layoutId={`${baseId}-highlight`}
-                        className="absolute inset-0 border-l-2 border-gold bg-forest-soft"
+                        className="absolute inset-0 border-l-2 border-gold bg-charcoal-soft"
                         transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                       />
                     )}

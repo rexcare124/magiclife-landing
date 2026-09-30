@@ -36,7 +36,7 @@ export function TransformCarousel() {
   const rotation = reduceMotion ? 0 : 38;
 
   return (
-    <section id="work" className="overflow-hidden bg-forest py-20 text-white lg:py-28">
+    <section id="work" className="overflow-hidden bg-charcoal py-20 text-white lg:py-28">
       <Container>
         <Reveal>
           <p className="mx-auto max-w-3xl text-center font-heading text-3xl leading-[1.25] sm:text-4xl lg:text-5xl">
@@ -95,7 +95,7 @@ export function TransformCarousel() {
                 transition={{ duration: 0.9, ease }}
               >
                 <Image src={project.image} alt={project.title} fill sizes="(min-width: 768px) 34vw, 78vw" className="object-cover" />
-                <span className="absolute inset-0 bg-forest/10 ring-1 ring-gold/30 ring-inset rounded-3xl" />
+                <span className="absolute inset-0 bg-ink/10 ring-1 ring-gold/30 ring-inset rounded-3xl" />
               </motion.button>
             </div>
           );

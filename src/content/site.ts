@@ -45,21 +45,23 @@ export const site = {
 };
 
 export const nav = [
-  { label: "Home", href: "#top" },
-  { label: "About", href: "#about" },
-  { label: "Ways to earn", href: "#services" },
-  { label: "How it works", href: "#process" },
-  { label: "Our work", href: "#work" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Features", href: "/features" },
+  { label: "Solutions", href: "/solutions" },
+  { label: "Team", href: "/team" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const quickLinks = [
-  { label: "Ways to earn", href: "#services" },
-  { label: "How it works", href: "#process" },
-  { label: "Our work", href: "#work" },
+  { label: "Ways to earn", href: "/#services" },
+  { label: "How it works", href: "/#process" },
+  { label: "Our work", href: "/solutions#work" },
+  { label: "Refer a client", href: "/contact?interest=client" },
 ];
 
-export const memberCta = { label: "Become a member", href: "#contact" };
+export const memberCta = { label: "Become a member", href: "/contact" };
 
 export const hero = {
   displayWord: "MAGIC",
@@ -137,7 +139,7 @@ export const creamSplit = {
       "Clear reporting on commissions and profit shares",
       "Side work done under your own name; we never ask to use your identity or accounts",
     ],
-    cta: { label: "Ask us anything", href: "#contact" },
+    cta: { label: "Ask us anything", href: "/contact" },
   },
 };
 
@@ -181,7 +183,7 @@ export const transform = {
 
 export const capabilities = {
   title: "What our agency builds for clients",
-  cta: { label: "Refer a client", href: "#contact" },
+  cta: { label: "Refer a client", href: "/contact?interest=client" },
   items: [
     {
       label: "Web development",
@@ -221,7 +223,7 @@ export const ctaSplit = {
 export const footer = {
   title: "Ready to see what comes next?",
   body: "Reach out and our team will walk you through membership, our programs and how members are paid.",
-  cta: { label: "Become a member", href: `mailto:${site.email}` },
+  cta: memberCta,
   about: "MagicLife is a software agency that builds for clients and grows together with its members.",
   wordmark: "MAGICLIFE",
   credit: "All rights reserved.",

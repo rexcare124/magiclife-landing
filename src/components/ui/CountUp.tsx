@@ -1,5 +1,6 @@
 "use client";
 
+import clsx from "clsx";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
 
@@ -9,9 +10,10 @@ type CountUpProps = {
   value: number;
   suffix?: string;
   className?: string;
+  digitClassName?: string;
 };
 
-export function CountUp({ value, suffix = "", className }: CountUpProps) {
+export function CountUp({ value, suffix = "", className, digitClassName }: CountUpProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
   const reduceMotion = useReducedMotion();
@@ -33,14 +35,14 @@ export function CountUp({ value, suffix = "", className }: CountUpProps) {
               }}
             >
               {DIGITS.map((d) => (
-                <span key={d} className="block h-[1em]">
+                <span key={d} className={clsx("block h-[1em]", digitClassName)}>
                   {d}
                 </span>
               ))}
             </motion.span>
           </span>
         ))}
-        <span>{suffix}</span>
+        <span className={digitClassName}>{suffix}</span>
       </span>
     </span>
   );

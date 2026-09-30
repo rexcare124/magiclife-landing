@@ -14,7 +14,8 @@ export function StatsIntro() {
           <CountUp
             value={statsIntro.stat.value}
             suffix={statsIntro.stat.suffix}
-            className="font-heading text-6xl font-normal tracking-tight text-forest sm:text-7xl"
+            className="font-heading text-6xl font-normal tracking-tight sm:text-7xl"
+            digitClassName="text-gold-gradient"
           />
           <p className="mt-5 text-base">{statsIntro.stat.label}</p>
 

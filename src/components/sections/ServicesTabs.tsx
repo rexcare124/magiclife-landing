@@ -46,7 +46,7 @@ export function ServicesTabs() {
                   onMouseEnter={() => setActive(i)}
                   className={clsx(
                     "group flex items-center justify-between border-b border-line py-6 text-left font-heading text-2xl transition-colors sm:text-3xl",
-                    i === active ? "border-b-gold text-forest" : "text-ink/35 hover:text-ink/70",
+                    i === active ? "border-b-gold text-ink" : "text-ink/35 hover:text-ink/70",
                   )}
                 >
                   {t.label}
@@ -72,7 +72,7 @@ export function ServicesTabs() {
             </div>
           </Reveal>
 
-          <Reveal delay={0.2} className="relative aspect-[4/3] overflow-hidden rounded-card bg-mist">
+          <Reveal delay={0.2} className="relative aspect-[4/3] overflow-hidden rounded-card bg-pearl">
             <AnimatePresence initial={false}>
               <motion.div
                 key={active}

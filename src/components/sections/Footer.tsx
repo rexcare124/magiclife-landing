@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/ui/Logo";
 import { PillButton } from "@/components/ui/PillButton";
@@ -8,10 +9,10 @@ import { footer, nav, quickLinks, site } from "@/content/site";
 
 export function Footer() {
   return (
-    <footer id="contact" className="relative isolate overflow-hidden bg-ink text-white">
+    <footer className="relative isolate overflow-hidden bg-ink text-white">
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_70%_60%_at_85%_100%,rgba(21,74,55,0.75),transparent_70%)]"
+        className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_70%_60%_at_85%_100%,rgba(214,171,69,0.12),transparent_70%)]"
       />
       <div
         aria-hidden
@@ -52,13 +53,13 @@ export function Footer() {
             <ul className="border-t border-gold/20">
               {nav.map((item) => (
                 <li key={item.href} className="border-b border-gold/20">
-                  <a href={item.href} className="group flex items-center justify-between py-5 text-lg text-white/85 transition-colors hover:text-gold-light">
+                  <Link href={item.href} className="group flex items-center justify-between py-5 text-lg text-white/85 transition-colors hover:text-gold-light">
                     {item.label}
                     <ArrowUpRight
                       aria-hidden
                       className="size-5 text-gold transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
                     />
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -71,9 +72,9 @@ export function Footer() {
                 <ul className="mt-4 space-y-3">
                   {quickLinks.map((link) => (
                     <li key={link.label}>
-                      <a href={link.href} className="text-white/75 transition-colors hover:text-gold-light">
+                      <Link href={link.href} className="text-white/75 transition-colors hover:text-gold-light">
                         {link.label}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>

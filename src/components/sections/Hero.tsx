@@ -49,7 +49,7 @@ export function Hero() {
             />
           </motion.div>
         </AnimatePresence>
-        <div className="absolute inset-0 bg-linear-to-b from-ink/70 via-forest/45 to-ink/95" />
+        <div className="absolute inset-0 bg-linear-to-b from-ink/70 via-ink/50 to-ink/95" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_45%_at_50%_18%,rgba(214,171,69,0.22),transparent_70%)]" />
         <div className="absolute inset-0 grid grid-cols-4" aria-hidden>
           {Array.from({ length: 4 }, (_, i) => (
@@ -109,7 +109,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6, ease }}
-          className="w-full max-w-sm shrink-0 self-center rounded-[28px] border border-gold/40 bg-forest/35 p-6 backdrop-blur-xl sm:self-end lg:max-w-md"
+          className="w-full max-w-sm shrink-0 self-center rounded-[28px] border border-gold/40 bg-ink/40 p-6 backdrop-blur-xl sm:self-end lg:max-w-md"
           aria-roledescription="carousel"
           aria-label="Highlights"
         >

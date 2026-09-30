@@ -1,15 +1,23 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import clsx from "clsx";
 import { ArrowUpRight, X } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/ui/Logo";
 import { PillButton } from "@/components/ui/PillButton";
 import { footer, memberCta, nav, site } from "@/content/site";
 
+function isActive(pathname: string, href: string) {
+  return href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
+}
+
 export function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -22,20 +30,29 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-gold/20 bg-ink text-white">
       <Container className="flex h-16 items-center justify-between">
-        <a href="#top" aria-label={`${site.name} home`}>
+        <Link href="/" aria-label={`${site.name} home`}>
           <Logo />
-        </a>
+        </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-7 xl:flex">
-          {nav.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="text-sm text-white/75 transition-colors hover:text-gold-light"
-            >
-              {item.label}
-            </a>
-          ))}
+          {nav.map((item) => {
+            const active = isActive(pathname, item.href);
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                aria-current={active ? "page" : undefined}
+                className={clsx(
+                  "relative py-1 text-sm transition-colors hover:text-gold-light",
+                  active
+                    ? "text-gold-light after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:bg-gold"
+                    : "text-white/75",
+                )}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="flex items-center gap-4">
@@ -70,7 +87,7 @@ export function Header() {
             animate={{ clipPath: "inset(0 0 0% 0)" }}
             exit={{ clipPath: "inset(0 0 100% 0)" }}
             transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-linear-to-b from-ink via-ink to-forest"
+            className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-linear-to-b from-ink via-ink to-charcoal"
           >
             <Container className="flex h-16 shrink-0 items-center justify-between">
               <Logo />
@@ -93,14 +110,18 @@ export function Header() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.25 + i * 0.06, duration: 0.5 }}
                   >
-                    <a
+                    <Link
                       href={item.href}
                       onClick={() => setOpen(false)}
-                      className="group flex items-center justify-between py-5 font-heading text-3xl transition-colors hover:text-gold-light sm:text-4xl"
+                      aria-current={isActive(pathname, item.href) ? "page" : undefined}
+                      className={clsx(
+                        "group flex items-center justify-between py-5 font-heading text-3xl transition-colors hover:text-gold-light sm:text-4xl",
+                        isActive(pathname, item.href) && "text-gold-light",
+                      )}
                     >
                       {item.label}
                       <ArrowUpRight className="size-6 text-gold/70 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-gold-light" />
-                    </a>
+                    </Link>
                   </motion.li>
                 ))}
               </ul>
@@ -109,9 +130,9 @@ export function Header() {
                   <p>{site.email}</p>
                   <p>{site.location}</p>
                 </div>
-                <PillButton href={footer.cta.href} className="self-start">
-                  {footer.cta.label}
-                </PillButton>
+                <div onClick={() => setOpen(false)} className="self-start">
+                  <PillButton href={footer.cta.href}>{footer.cta.label}</PillButton>
+                </div>
               </div>
             </Container>
           </motion.div>
