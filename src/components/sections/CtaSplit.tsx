@@ -12,11 +12,11 @@ export function CtaSplit() {
         <Reveal className="max-w-lg">
           <SectionHeading>{ctaSplit.title}</SectionHeading>
           <p className="mt-6 leading-relaxed text-muted sm:text-lg">{ctaSplit.body}</p>
-          <PillButton href={ctaSplit.cta.href} variant="navy" className="mt-8">
+          <PillButton href={ctaSplit.cta.href} variant="green" className="mt-8">
             {ctaSplit.cta.label}
           </PillButton>
         </Reveal>
-        <Reveal delay={0.1} className="relative aspect-[4/3] overflow-hidden rounded-card lg:aspect-[9/10]">
+        <Reveal delay={0.1} className="relative aspect-[4/3] overflow-hidden rounded-card ring-1 ring-gold/40 lg:aspect-[9/10]">
           <Image
             src={ctaSplit.image}
             alt=""

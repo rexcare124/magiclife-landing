@@ -14,19 +14,19 @@ export function StatsIntro() {
           <CountUp
             value={statsIntro.stat.value}
             suffix={statsIntro.stat.suffix}
-            className="font-heading text-6xl font-normal tracking-tight sm:text-7xl"
+            className="font-heading text-6xl font-normal tracking-tight text-forest sm:text-7xl"
           />
           <p className="mt-5 text-base">{statsIntro.stat.label}</p>
 
           <div className="mt-10 flex -space-x-3">
             {statsIntro.avatars.map((src, i) => (
-              <div key={src} className="relative size-14 overflow-hidden rounded-full border-2 border-white sm:size-16" style={{ zIndex: 10 - i }}>
+              <div key={src} className="relative size-14 overflow-hidden rounded-full border-2 border-gold sm:size-16" style={{ zIndex: 10 - i }}>
                 <Image src={src} alt="" fill sizes="64px" className="object-cover" />
               </div>
             ))}
           </div>
           <p className="mt-4 flex items-center gap-2 text-base">
-            <Star aria-hidden className="size-4 fill-amber-400 text-amber-400" />
+            <Star aria-hidden className="size-4 fill-gold text-gold" />
             {statsIntro.trust}
           </p>
         </Reveal>

@@ -36,7 +36,7 @@ export function TransformCarousel() {
   const rotation = reduceMotion ? 0 : 38;
 
   return (
-    <section id="work" className="overflow-hidden bg-navy py-20 text-white lg:py-28">
+    <section id="work" className="overflow-hidden bg-forest py-20 text-white lg:py-28">
       <Container>
         <Reveal>
           <p className="mx-auto max-w-3xl text-center font-heading text-3xl leading-[1.25] sm:text-4xl lg:text-5xl">
@@ -45,11 +45,11 @@ export function TransformCarousel() {
                 {line}
               </span>
             ))}
-            <span className="flex flex-wrap items-center justify-center gap-x-4">
+            <span className="text-gold-gradient flex flex-wrap items-center justify-center gap-x-4">
               {transform.lastLine.before}
               <span className="inline-flex -space-x-3" aria-hidden>
                 {transform.thumbs.map((src) => (
-                  <span key={src} className="relative inline-block size-12 overflow-hidden rounded-full border-2 border-navy sm:size-14">
+                  <span key={src} className="relative inline-block size-12 overflow-hidden rounded-full border-2 border-gold sm:size-14">
                     <Image src={src} alt="" fill sizes="56px" className="object-cover" />
                   </span>
                 ))}
@@ -95,7 +95,7 @@ export function TransformCarousel() {
                 transition={{ duration: 0.9, ease }}
               >
                 <Image src={project.image} alt={project.title} fill sizes="(min-width: 768px) 34vw, 78vw" className="object-cover" />
-                <span className="absolute inset-0 bg-navy/10" />
+                <span className="absolute inset-0 bg-forest/10 ring-1 ring-gold/30 ring-inset rounded-3xl" />
               </motion.button>
             </div>
           );
@@ -114,7 +114,7 @@ export function TransformCarousel() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.3 }}
-              className="font-heading text-lg"
+              className="font-heading text-lg text-gold-light"
             >
               {transform.projects[active].title}
             </motion.p>
@@ -134,7 +134,7 @@ function CarouselButton({ label, onClick, children }: { label: string; onClick: 
       type="button"
       aria-label={label}
       onClick={onClick}
-      className="flex size-11 items-center justify-center rounded-full border border-white/30 transition-colors hover:bg-white hover:text-navy"
+      className="flex size-11 items-center justify-center rounded-full border border-gold/50 text-gold-light transition-colors hover:bg-gold hover:text-ink"
     >
       {children}
     </button>

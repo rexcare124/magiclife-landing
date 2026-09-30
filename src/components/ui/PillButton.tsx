@@ -1,12 +1,13 @@
 import clsx from "clsx";
 import { ArrowUpRight } from "lucide-react";
 
-type Variant = "light" | "dark" | "navy";
+type Variant = "gold" | "light" | "dark" | "green";
 
 const styles: Record<Variant, { pill: string; dot: string }> = {
-  light: { pill: "bg-white text-ink", dot: "bg-ink text-white" },
-  dark: { pill: "bg-ink text-white", dot: "bg-white text-ink" },
-  navy: { pill: "bg-navy text-white", dot: "bg-white text-navy" },
+  gold: { pill: "bg-linear-to-r from-gold-light to-gold text-ink", dot: "bg-ink text-gold-light" },
+  light: { pill: "bg-white text-ink", dot: "bg-ink text-gold-light" },
+  dark: { pill: "bg-ink text-white", dot: "bg-gold text-ink" },
+  green: { pill: "bg-forest text-white", dot: "bg-gold text-ink" },
 };
 
 type PillButtonProps = {
@@ -16,7 +17,7 @@ type PillButtonProps = {
   className?: string;
 };
 
-export function PillButton({ href, children, variant = "light", className }: PillButtonProps) {
+export function PillButton({ href, children, variant = "gold", className }: PillButtonProps) {
   const s = styles[variant];
 
   return (

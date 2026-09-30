@@ -28,14 +28,14 @@ export const images = {
 };
 
 export const site = {
-  name: "WCJ Agency",
-  shortName: "WCJ",
-  tagline: "Marketing that moves brands forward",
+  name: "MagicLife",
+  slogan: "A Simple Side Opportunity Could Change What Comes Next.",
+  tagline: "A software agency that grows with its members",
   description:
-    "WCJ Agency is a full-service marketing studio blending strategy, creative and performance to build brands people remember.",
-  url: "https://wcjagency.com",
-  ogImage: images.heroStudio,
-  email: "hello@wcjagency.com",
+    "MagicLife is a software agency welcoming new members. No coding experience needed: earn extra income through client referrals, profit-sharing partnerships and flexible side work, all alongside your current job.",
+  url: "https://magiclife.com",
+  ogImage: "/brand/magiclife-og.jpg",
+  email: "hello@magiclife.com",
   location: "Your street address, City, State 00000",
   socials: [
     { label: "Facebook", href: "#", icon: "facebook" },
@@ -47,175 +47,182 @@ export const site = {
 export const nav = [
   { label: "Home", href: "#top" },
   { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Work", href: "#work" },
+  { label: "Ways to earn", href: "#services" },
+  { label: "How it works", href: "#process" },
+  { label: "Our work", href: "#work" },
   { label: "Contact", href: "#contact" },
 ];
 
 export const quickLinks = [
-  { label: "Portfolio", href: "#work" },
-  { label: "Process", href: "#process" },
-  { label: "Services", href: "#services" },
+  { label: "Ways to earn", href: "#services" },
+  { label: "How it works", href: "#process" },
+  { label: "Our work", href: "#work" },
 ];
 
+export const memberCta = { label: "Become a member", href: "#contact" };
+
 export const hero = {
-  displayWord: "GROWTH",
-  eyebrow: "Built for measurable growth",
-  title: "Marketing that moves modern brands",
-  body: "We push brands forward through sharp strategy and bold creative. Every campaign tells a story shaped by insight, detail and purpose.",
-  cta: { label: "Get started", href: "#contact" },
+  displayWord: "MAGIC",
+  eyebrow: "Now welcoming new members",
+  title: "A simple side opportunity could change what comes next",
+  body: "MagicLife is a software agency that grows together with its members. Keep your current job, bring no coding experience, and earn extra income through referrals, profit-sharing and flexible side work, all under your own name.",
+  cta: memberCta,
   backgrounds: [images.heroSkyline, images.heroNetwork, images.heroStudio],
   slides: [
     {
-      title: "Strategy in every move",
-      body: "Planned with data, built to perform.",
+      title: "Refer and earn",
+      body: "Commission on every client you bring in.",
+      image: images.teamLaptops,
+    },
+    {
+      title: "Share in our growth",
+      body: "Profit-sharing partnerships with clear terms.",
       image: images.analytics,
     },
     {
-      title: "Story meets performance",
-      body: "Where bold creative drives real results.",
-      image: images.creative,
-    },
-    {
-      title: "Brands built for tomorrow",
-      body: "Identities designed for how people buy now.",
-      image: images.socialApps,
+      title: "Flexible side work",
+      body: "Paid, non-technical tasks that fit your schedule.",
+      image: images.workspace,
     },
   ],
 };
 
 export const statsIntro = {
-  stat: { value: 50, suffix: "%", label: "Average lift in qualified leads" },
+  stat: { value: 3, suffix: "", label: "Ways to earn alongside your current job" },
   avatars: [images.avatar1, images.avatar2, images.avatar3],
-  trust: "Trusted by 200+ growing brands",
-  title: "We build campaigns that blend creativity, clarity and results",
-  body: "We craft marketing that balances strategy, storytelling and performance, creating campaigns that connect, convert and keep people coming back. Creative driven by insight, detail and a deep understanding of your audience.",
+  trust: "Join a growing community of members",
+  title: "You don't need to write code to be part of a software agency",
+  body: "Our developers build websites, apps and custom software for clients. As a member, you help the agency grow in the way that suits you best, whether that's introducing clients, partnering in our profits or taking on simple paid tasks, and you're rewarded for the value you bring. There's no need to leave your job or learn anything technical.",
 };
 
 export const featureCards = {
-  media: { image: images.teamHuddle, alt: "WCJ team collaborating" },
+  media: { image: images.teamHuddle, alt: "MagicLife members and team celebrating together" },
   highlight: {
-    title: "Campaigns that stand out",
-    body: "Our integrated campaigns are designed to deliver maximum reach while lowering your cost to acquire every new customer.",
-    cta: { label: "Discover more", href: "#services" },
+    title: "Keep your job. Add a new income.",
+    body: "Membership is designed to fit around your life. Choose how involved you want to be, and earn for the clients, capital or time you contribute.",
+    cta: { label: "See ways to earn", href: "#services" },
   },
   showcase: {
     image: images.office,
-    title: "Award-worthy brand launches",
+    title: "Real software for real clients",
   },
 };
 
 export const creamSplit = {
   first: {
-    title: "Deep audience research and planning for real impact",
+    title: "Getting started is simple",
     image: images.brainstorm,
     items: [
       {
-        title: "Brand and market audits",
-        body: "We assess your positioning, competitors and channels to find the clearest path to growth.",
+        title: "Join as a member",
+        body: "Tell us a little about yourself and choose the program that fits you: referrals, partnership, side work or a mix of all three.",
       },
       {
-        title: "Customer journey mapping",
-        body: "We map every touchpoint to remove friction, sharpen messaging and turn attention into action.",
+        title: "Get set up with our team",
+        body: "We walk you through how your program works, its written terms and how you get paid. No technical training required.",
+      },
+      {
+        title: "Start earning",
+        body: "Introduce clients, complete tasks or share in profits, and receive clear, regular payouts for what you contribute.",
       },
     ],
-    cta: { label: "Discover more", href: "#services" },
+    cta: memberCta,
   },
   second: {
-    title: "Performance campaigns with every dollar working harder",
+    title: "Transparent, honest and always in your own name",
     image: images.workspace,
-    body: "Our work balances creativity and precision, delivering thoughtfully crafted campaigns that respond to your market, elevate your brand and stand as lasting proof of what great marketing can do.",
+    body: "We believe a side opportunity should be simple and trustworthy. Your agreements, your work and your earnings are always yours, clearly documented and free of hidden conditions.",
     bullets: [
-      "Paid social and search advertising",
-      "Content and SEO programs",
-      "Conversion-focused web design",
+      "Written terms for every program",
+      "Clear reporting on commissions and profit shares",
+      "Side work done under your own name; we never ask to use your identity or accounts",
     ],
-    cta: { label: "Explore more", href: "#work" },
+    cta: { label: "Ask us anything", href: "#contact" },
   },
 };
 
 export const servicesTabs = {
-  eyebrow: "Designed for lasting impact",
-  title: "Full-service marketing strategy and execution",
+  eyebrow: "Ways to earn with MagicLife",
+  title: "Choose the side opportunity that fits your life",
   tabs: [
     {
-      label: "Strategy",
-      body: "We turn goals into a clear growth plan. By pairing market insight with sharp positioning, we help you focus budget where it drives the biggest return.",
-      image: images.strategy,
+      label: "Referrals",
+      body: "Know a business that needs a website, an app or custom software? Introduce them to MagicLife. When the project goes ahead, you earn a commission. No selling skills or technical knowledge needed; our team handles the rest.",
+      image: images.teamLaptops,
     },
     {
-      label: "Creative",
-      body: "We build distinctive brand worlds and campaigns, combining striking design, confident copy and a deep understanding of what makes people stop scrolling.",
-      image: images.creative,
+      label: "Partnership",
+      body: "Become a profit-sharing partner and share in the agency's success. Every partnership comes with clear written terms, so you always know how profits are calculated and when they are paid.",
+      image: images.analytics,
     },
     {
-      label: "Performance",
-      body: "From launch to scale, we run and optimise campaigns across every channel, delivering marketing that is measurable, efficient and built to grow.",
-      image: images.dashboard,
+      label: "Side work",
+      body: "Take on paid, non-technical tasks such as app testing, research, customer outreach or admin support. Work flexible hours, under your own name, alongside your current job.",
+      image: images.workspace,
     },
   ],
-  footnote: "Marketing focused on clarity, consistency and leaving a lasting impression.",
-  cta: { label: "Discover work", href: "#work" },
+  footnote: "Earnings depend on the program you choose and what you contribute.",
+  cta: memberCta,
 };
 
 export const transform = {
-  lines: ["We transform ideas", "into campaigns that"],
-  lastLine: { before: "connect", after: "with people" },
+  lines: ["Our developers turn ideas", "into software that"],
+  lastLine: { before: "changes", after: "what comes next" },
   thumbs: [images.abstract3d, images.gradient],
   projects: [
-    { title: "Brand refresh", image: images.creative },
-    { title: "Launch campaign", image: images.teamLaptops },
-    { title: "Social growth", image: images.socialApps },
-    { title: "Web experience", image: images.techTeam },
-    { title: "Content engine", image: images.marketingDesk },
-    { title: "Growth analytics", image: images.analytics },
+    { title: "Business websites", image: images.creative },
+    { title: "Mobile apps", image: images.socialApps },
+    { title: "E-commerce stores", image: images.marketingDesk },
+    { title: "Custom dashboards", image: images.dashboard },
+    { title: "SaaS platforms", image: images.techTeam },
+    { title: "Automation tools", image: images.teamLaptops },
   ],
 };
 
 export const capabilities = {
-  title: "Growth capabilities that scale with you",
-  cta: { label: "Our projects", href: "#work" },
+  title: "What our agency builds for clients",
+  cta: { label: "Refer a client", href: "#contact" },
   items: [
     {
-      label: "Brand strategy",
-      body: "We blend market foresight and careful positioning to deliver a brand platform that aligns your team, sharpens your message and gives every campaign a confident foundation.",
-      image: images.planning,
+      label: "Web development",
+      body: "Fast, modern websites and web applications, from company sites and landing pages to complex platforms built to scale with a growing business.",
+      image: images.techTeam,
     },
     {
-      label: "Creative campaigns",
-      body: "We merge big ideas with precise craft to create campaigns that capture attention, elevate how your brand is seen and breathe new life into every channel.",
-      image: images.presentation,
-    },
-    {
-      label: "Paid media",
-      body: "We unite data-driven targeting with creative testing to build paid programs that reach the right people, lower acquisition costs and scale profitably.",
-      image: images.dashboard,
-    },
-    {
-      label: "Content and social",
-      body: "We pair editorial thinking with platform know-how to create content that builds community, earns attention and keeps your brand part of the conversation.",
+      label: "Mobile apps",
+      body: "Native and cross-platform apps for iOS and Android, designed to be simple to use and built to perform reliably for thousands of users.",
       image: images.socialApps,
     },
     {
-      label: "Web and conversion",
-      body: "We bring together bold design and rigorous testing to build websites and landing pages that load fast, tell your story and turn visitors into customers.",
-      image: images.techTeam,
+      label: "Custom software",
+      body: "Tailored tools, dashboards and integrations that automate everyday work, connect existing systems and help businesses run more efficiently.",
+      image: images.dashboard,
+    },
+    {
+      label: "UI and UX design",
+      body: "Clear, attractive interfaces shaped by real user research, so every product we deliver feels intuitive from the very first click.",
+      image: images.presentation,
+    },
+    {
+      label: "Cloud and maintenance",
+      body: "Secure hosting, monitoring and ongoing support that keep our clients' software fast, up to date and running smoothly long after launch.",
+      image: images.planning,
     },
   ],
 };
 
 export const ctaSplit = {
-  title: "Building brands people love to choose",
-  body: "From first idea to final report, we work closely with our clients to bring their vision to life, delivering marketing that is focused, measurable and beautifully made.",
-  cta: { label: "View projects", href: "#work" },
+  title: "Become a life-changing wizard",
+  body: "Join MagicLife as a member and discover how a simple side opportunity can add real value to your life, without giving up what you do today.",
+  cta: memberCta,
   image: images.teamTable,
 };
 
 export const footer = {
-  title: "Stay connected with us",
-  body: "Reach out to explore how our team can grow your next campaign.",
-  cta: { label: "Get in touch", href: `mailto:${site.email}` },
-  about: "We build purposeful brands that blend strategy with craft.",
-  wordmark: "AGENCY",
-  credit: "Designed and built for WCJ Agency",
+  title: "Ready to see what comes next?",
+  body: "Reach out and our team will walk you through membership, our programs and how members are paid.",
+  cta: { label: "Become a member", href: `mailto:${site.email}` },
+  about: "MagicLife is a software agency that builds for clients and grows together with its members.",
+  wordmark: "MAGICLIFE",
+  credit: "All rights reserved.",
 };

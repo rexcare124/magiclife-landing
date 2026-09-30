@@ -20,7 +20,7 @@ export function ServicesTabs() {
       <Container>
         <Reveal className="grid gap-8 lg:grid-cols-2 lg:items-end">
           <div>
-            <p className="mb-4 text-sm font-medium tracking-wide text-muted uppercase">{servicesTabs.eyebrow}</p>
+            <p className="mb-4 text-sm font-medium tracking-wide text-gold-deep uppercase">{servicesTabs.eyebrow}</p>
             <SectionHeading className="max-w-xl">{servicesTabs.title}</SectionHeading>
           </div>
           <div className="flex flex-col gap-6 lg:items-end lg:text-right">
@@ -46,11 +46,13 @@ export function ServicesTabs() {
                   onMouseEnter={() => setActive(i)}
                   className={clsx(
                     "group flex items-center justify-between border-b border-line py-6 text-left font-heading text-2xl transition-colors sm:text-3xl",
-                    i === active ? "text-ink" : "text-ink/35 hover:text-ink/70",
+                    i === active ? "border-b-gold text-forest" : "text-ink/35 hover:text-ink/70",
                   )}
                 >
                   {t.label}
-                  <span className="font-sans text-sm tabular-nums">{String(i + 1).padStart(2, "0")}</span>
+                  <span className={clsx("font-sans text-sm tabular-nums", i === active && "text-gold-deep")}>
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                 </button>
               ))}
             </div>

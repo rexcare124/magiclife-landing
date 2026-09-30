@@ -28,22 +28,22 @@ export function FeatureCards() {
             type="button"
             aria-label={paused ? "Play animation" : "Pause animation"}
             onClick={() => setPaused((p) => !p)}
-            className="absolute bottom-5 left-5 flex size-12 items-center justify-center rounded-full bg-white/25 text-white backdrop-blur-md transition-colors hover:bg-white/40"
+            className="absolute bottom-5 left-5 flex size-12 items-center justify-center rounded-full bg-ink/40 text-gold-light backdrop-blur-md transition-colors hover:bg-ink/60"
           >
-            {paused ? <Play className="size-5 fill-white" /> : <Pause className="size-5 fill-white" />}
+            {paused ? <Play className="size-5 fill-gold-light" /> : <Pause className="size-5 fill-gold-light" />}
           </button>
         </Reveal>
 
         <Reveal
           delay={0.1}
-          className="flex min-h-[22rem] flex-col items-center justify-center gap-6 rounded-card bg-navy px-8 py-12 text-center text-white"
+          className="flex min-h-[22rem] flex-col items-center justify-center gap-6 rounded-card border border-gold/30 bg-linear-to-br from-forest to-forest-soft px-8 py-12 text-center text-white"
         >
-          <h3 className="font-heading text-2xl font-medium tracking-[0.01em] sm:text-[1.75rem]">{highlight.title}</h3>
+          <h3 className="text-gold-gradient font-heading text-2xl font-medium tracking-[0.01em] sm:text-[1.75rem]">{highlight.title}</h3>
           <p className="max-w-xs leading-relaxed text-white/85">{highlight.body}</p>
           <PillButton href={highlight.cta.href}>{highlight.cta.label}</PillButton>
         </Reveal>
 
-        <Reveal delay={0.2} className="flex flex-col gap-8 rounded-card bg-mist p-6 sm:p-8">
+        <Reveal delay={0.2} className="flex flex-col gap-8 rounded-card bg-ink p-6 text-white sm:p-8">
           <div className="relative aspect-[16/10] overflow-hidden rounded-2xl">
             <Image
               src={showcase.image}

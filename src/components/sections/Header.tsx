@@ -4,8 +4,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Container } from "@/components/ui/Container";
+import { Logo } from "@/components/ui/Logo";
 import { PillButton } from "@/components/ui/PillButton";
-import { footer, nav, site } from "@/content/site";
+import { footer, memberCta, nav, site } from "@/content/site";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -19,19 +20,18 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 bg-ink text-white">
+    <header className="sticky top-0 z-50 border-b border-gold/20 bg-ink text-white">
       <Container className="flex h-16 items-center justify-between">
-        <a href="#top" className="font-heading text-lg font-medium tracking-[0.18em] whitespace-nowrap uppercase sm:text-xl">
-          {site.shortName}
-          <span className="text-white/50"> Agency</span>
+        <a href="#top" aria-label={`${site.name} home`}>
+          <Logo />
         </a>
 
-        <nav aria-label="Primary" className="hidden items-center gap-8 lg:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-7 xl:flex">
           {nav.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-sm text-white/75 transition-colors hover:text-white"
+              className="text-sm text-white/75 transition-colors hover:text-gold-light"
             >
               {item.label}
             </a>
@@ -39,9 +39,9 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-4">
-          <div className="hidden lg:block">
-            <PillButton href="#contact" className="py-1.5! text-sm">
-              Get in touch
+          <div className="hidden xl:block">
+            <PillButton href={memberCta.href} className="py-1.5! text-sm">
+              {memberCta.label}
             </PillButton>
           </div>
           <button
@@ -50,11 +50,11 @@ export function Header() {
             aria-expanded={open}
             aria-controls="site-menu"
             onClick={() => setOpen((v) => !v)}
-            className="relative flex size-10 flex-col items-end justify-center gap-1.5 lg:hidden"
+            className="relative flex size-10 flex-col items-end justify-center gap-1.5 xl:hidden"
           >
-            <span className="h-px w-6 bg-white" />
-            <span className="h-px w-6 bg-white" />
-            <span className="h-px w-4 bg-white" />
+            <span className="h-px w-6 bg-gold-light" />
+            <span className="h-px w-6 bg-gold-light" />
+            <span className="h-px w-4 bg-gold-light" />
           </button>
         </div>
       </Container>
@@ -70,25 +70,22 @@ export function Header() {
             animate={{ clipPath: "inset(0 0 0% 0)" }}
             exit={{ clipPath: "inset(0 0 100% 0)" }}
             transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-ink"
+            className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-linear-to-b from-ink via-ink to-forest"
           >
             <Container className="flex h-16 shrink-0 items-center justify-between">
-              <span className="font-heading text-lg font-medium tracking-[0.18em] whitespace-nowrap uppercase sm:text-xl">
-                {site.shortName}
-                <span className="text-white/50"> Agency</span>
-              </span>
+              <Logo />
               <button
                 type="button"
                 aria-label="Close menu"
                 onClick={() => setOpen(false)}
-                className="flex size-10 items-center justify-center"
+                className="flex size-10 items-center justify-center text-gold-light"
               >
                 <X className="size-6" />
               </button>
             </Container>
 
             <Container className="flex flex-1 flex-col justify-between py-10">
-              <ul className="divide-y divide-white/15 border-y border-white/15">
+              <ul className="divide-y divide-gold/20 border-y border-gold/20">
                 {nav.map((item, i) => (
                   <motion.li
                     key={item.href}
@@ -99,10 +96,10 @@ export function Header() {
                     <a
                       href={item.href}
                       onClick={() => setOpen(false)}
-                      className="group flex items-center justify-between py-5 font-heading text-3xl sm:text-4xl"
+                      className="group flex items-center justify-between py-5 font-heading text-3xl transition-colors hover:text-gold-light sm:text-4xl"
                     >
                       {item.label}
-                      <ArrowUpRight className="size-6 text-white/60 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-white" />
+                      <ArrowUpRight className="size-6 text-gold/70 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-gold-light" />
                     </a>
                   </motion.li>
                 ))}

@@ -16,9 +16,9 @@ export function CapabilityAccordion() {
   const item = capabilities.items[active];
 
   return (
-    <section className="bg-navy pb-20 text-white lg:pb-28">
+    <section className="bg-forest pb-20 text-white lg:pb-28">
       <Container>
-        <div className="border-t border-white/10 pt-16 lg:pt-20">
+        <div className="border-t border-gold/20 pt-16 lg:pt-20">
           <Reveal className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <SectionHeading className="max-w-md">{capabilities.title}</SectionHeading>
             <PillButton href={capabilities.cta.href} className="self-start sm:self-auto">
@@ -61,7 +61,7 @@ export function CapabilityAccordion() {
             </Reveal>
 
             <Reveal delay={0.2} className="order-1 lg:order-2">
-              <div role="tablist" aria-label="Capabilities" aria-orientation="vertical" className="border-t border-white/15">
+              <div role="tablist" aria-label="Capabilities" aria-orientation="vertical" className="border-t border-gold/20">
                 {capabilities.items.map((c, i) => (
                   <button
                     key={c.label}
@@ -73,14 +73,14 @@ export function CapabilityAccordion() {
                     onClick={() => setActive(i)}
                     onMouseEnter={() => setActive(i)}
                     className={clsx(
-                      "relative flex w-full items-center justify-between gap-6 border-b border-white/15 px-5 py-5 text-left font-display text-xl font-bold transition-colors duration-300 sm:text-2xl",
-                      i === active ? "text-white" : "text-white/40 hover:text-white/70",
+                      "relative flex w-full items-center justify-between gap-6 border-b border-gold/20 px-5 py-5 text-left font-display text-xl font-bold transition-colors duration-300 sm:text-2xl",
+                      i === active ? "text-gold-light" : "text-white/45 hover:text-white/75",
                     )}
                   >
                     {i === active && (
                       <motion.span
                         layoutId={`${baseId}-highlight`}
-                        className="absolute inset-0 bg-navy-soft"
+                        className="absolute inset-0 border-l-2 border-gold bg-forest-soft"
                         transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                       />
                     )}

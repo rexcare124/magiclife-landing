@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
+import { ChevronLeft, ChevronRight, Pause, Play, Sparkles } from "lucide-react";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { Container } from "@/components/ui/Container";
@@ -28,7 +28,7 @@ export function Hero() {
   const slide = hero.slides[index];
 
   return (
-    <section id="top" className="relative isolate overflow-hidden bg-navy text-white">
+    <section id="top" className="relative isolate overflow-hidden bg-ink text-white">
       <div className="absolute inset-0 -z-10">
         <AnimatePresence initial={false}>
           <motion.div
@@ -49,10 +49,11 @@ export function Hero() {
             />
           </motion.div>
         </AnimatePresence>
-        <div className="absolute inset-0 bg-linear-to-b from-navy/40 via-navy/30 to-navy/90" />
+        <div className="absolute inset-0 bg-linear-to-b from-ink/70 via-forest/45 to-ink/95" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_45%_at_50%_18%,rgba(214,171,69,0.22),transparent_70%)]" />
         <div className="absolute inset-0 grid grid-cols-4" aria-hidden>
           {Array.from({ length: 4 }, (_, i) => (
-            <div key={i} className="border-r border-white/15 last:border-r-0" />
+            <div key={i} className="border-r border-gold/15 last:border-r-0" />
           ))}
         </div>
       </div>
@@ -64,7 +65,7 @@ export function Hero() {
         transition={{ duration: 1.2, ease }}
         className="pointer-events-none absolute inset-x-0 top-10 text-center font-display text-[19vw] leading-none font-black tracking-tight text-transparent select-none sm:top-14 lg:text-[15rem] xl:text-[17rem]"
         style={{
-          backgroundImage: "linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.08) 100%)",
+          backgroundImage: "linear-gradient(180deg, rgba(244,217,138,0.95) 0%, rgba(214,171,69,0.55) 45%, rgba(214,171,69,0.04) 100%)",
           WebkitBackgroundClip: "text",
           backgroundClip: "text",
         }}
@@ -78,8 +79,9 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease }}
-            className="mb-4 text-sm font-medium sm:text-base"
+            className="mb-4 flex items-center gap-2 text-sm font-medium text-gold-light sm:text-base"
           >
+            <Sparkles aria-hidden className="size-4" />
             {hero.eyebrow}
           </motion.p>
           <motion.h1
@@ -107,7 +109,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6, ease }}
-          className="w-full max-w-sm shrink-0 self-center rounded-[28px] border border-white/30 bg-white/10 p-6 backdrop-blur-xl sm:self-end lg:max-w-md"
+          className="w-full max-w-sm shrink-0 self-center rounded-[28px] border border-gold/40 bg-forest/35 p-6 backdrop-blur-xl sm:self-end lg:max-w-md"
           aria-roledescription="carousel"
           aria-label="Highlights"
         >
@@ -121,7 +123,7 @@ export function Hero() {
                 transition={{ duration: 0.5, ease }}
                 aria-live={paused ? "polite" : "off"}
               >
-                <h2 className="font-display text-xl font-bold tracking-wide sm:text-2xl">{slide.title}</h2>
+                <h2 className="font-display text-xl font-bold tracking-wide text-gold-light sm:text-2xl">{slide.title}</h2>
                 <p className="mt-1 text-sm text-white/85 sm:text-base">{slide.body}</p>
                 <div className="relative mt-5 aspect-[16/10] overflow-hidden rounded-2xl">
                   <Image src={slide.image} alt={slide.title} fill sizes="(min-width: 1024px) 420px, 90vw" className="object-cover" />
@@ -139,7 +141,7 @@ export function Hero() {
                   aria-label={`Go to slide ${i + 1}`}
                   aria-current={i === index ? "true" : undefined}
                   onClick={() => setIndex(i)}
-                  className={`h-1.5 rounded-full transition-all duration-500 ${i === index ? "w-8 bg-white" : "w-1.5 bg-white/40"}`}
+                  className={`h-1.5 rounded-full transition-all duration-500 ${i === index ? "w-8 bg-gold" : "w-1.5 bg-white/40"}`}
                 />
               ))}
             </div>
@@ -167,7 +169,7 @@ function HeroControl({ label, onClick, children }: { label: string; onClick: () 
       type="button"
       aria-label={label}
       onClick={onClick}
-      className="flex size-10 items-center justify-center rounded-full border border-white/40 transition-colors hover:bg-white hover:text-navy"
+      className="flex size-10 items-center justify-center rounded-full border border-gold/50 text-gold-light transition-colors hover:bg-gold hover:text-ink"
     >
       {children}
     </button>

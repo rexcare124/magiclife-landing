@@ -10,7 +10,7 @@ export function CreamSplit() {
   const { first, second } = creamSplit;
 
   return (
-    <section id="process" className="bg-cream py-20 lg:py-28">
+    <section id="process" className="bg-ivory py-20 lg:py-28">
       <Container className="flex flex-col gap-20 lg:gap-24">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
           <Reveal className="order-2 lg:order-1">
@@ -18,7 +18,7 @@ export function CreamSplit() {
             <ul className="mt-10 space-y-8">
               {first.items.map((item) => (
                 <li key={item.title} className="flex gap-5">
-                  <span className="flex size-9 shrink-0 items-center justify-center rounded-full border border-ink">
+                  <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-forest text-gold-light">
                     <Check aria-hidden className="size-4" />
                   </span>
                   <div>
@@ -28,7 +28,7 @@ export function CreamSplit() {
                 </li>
               ))}
             </ul>
-            <PillButton href={first.cta.href} variant="navy" className="mt-10">
+            <PillButton href={first.cta.href} variant="green" className="mt-10">
               {first.cta.label}
             </PillButton>
           </Reveal>
@@ -43,14 +43,14 @@ export function CreamSplit() {
           </Reveal>
           <Reveal delay={0.1} className="lg:pl-8">
             <SectionHeading className="max-w-lg">{second.title}</SectionHeading>
-            <hr className="my-8 border-ink/20" />
+            <hr className="my-8 border-gold/50" />
             <p className="leading-relaxed">{second.body}</p>
-            <ul className="mt-6 list-disc space-y-1.5 pl-5">
+            <ul className="mt-6 list-disc space-y-1.5 pl-5 marker:text-gold">
               {second.bullets.map((b) => (
                 <li key={b}>{b}</li>
               ))}
             </ul>
-            <PillButton href={second.cta.href} variant="navy" className="mt-8">
+            <PillButton href={second.cta.href} variant="green" className="mt-8">
               {second.cta.label}
             </PillButton>
           </Reveal>
