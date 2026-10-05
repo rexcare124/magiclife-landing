@@ -22,21 +22,21 @@ export const team = {
     title: "Guiding the agency and its members",
     members: [
       {
-        name: "Xinrou Li",
+        name: "Agus Darmawan",
         role: "Founder & CEO",
         bio: "Started MagicLife to open software work up to everyone. Leads strategy, partnerships and member growth.",
         image: photo(9),
         socials: [{ label: "LinkedIn", href: "#" }],
       },
       {
-        name: "Sophie Laurent",
+        name: "John Loveall",
         role: "Chief Operating Officer",
         bio: "Keeps projects, payouts and member programs running smoothly, with clear terms at every step.",
         image: photo(10),
         socials: [{ label: "LinkedIn", href: "#" }],
       },
       {
-        name: "David Alejerous",
+        name: "David Alejos",
         role: "Chief Technology Officer",
         bio: "Twenty years of shipping software. Oversees engineering quality across every client project.",
         image: photo(5),
@@ -66,14 +66,14 @@ export const team = {
         ],
       },
       {
-        name: "Adrian Cruz",
+        name: "Moises Banares",
         role: "Mobile Engineer",
         bio: "Builds iOS and Android apps that thousands of people use every day.",
         image: photo(3),
         socials: [{ label: "LinkedIn", href: "#" }],
       },
       {
-        name: "Clara Nielsen",
+        name: "Julia Krasytska",
         role: "UI/UX Designer",
         bio: "Turns user research into clear, beautiful interfaces.",
         image: photo(4),
@@ -97,7 +97,7 @@ export const team = {
         socials: [{ label: "LinkedIn", href: "#" }],
       },
       {
-        name: "Nora Evans",
+        name: "Xinrou Li",
         role: "Project Manager",
         bio: "Keeps client projects on time and members in the loop.",
         image: photo(8),

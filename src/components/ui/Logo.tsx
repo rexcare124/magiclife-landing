@@ -1,4 +1,7 @@
+"use client";
+
 import clsx from "clsx";
+import { useState } from "react";
 import { LogoMark } from "@/components/ui/LogoMark";
 import { site } from "@/content/site";
 
@@ -11,10 +14,15 @@ type LogoProps = {
 
 export function Logo({ className, size = "sm", play = "mount", showSlogan = false }: LogoProps) {
   const lg = size === "lg";
+  // Bumping the key remounts the mark, which replays its draw-in animation.
+  const [replay, setReplay] = useState(0);
 
   return (
-    <span className={clsx("inline-flex items-center", lg ? "gap-4 sm:gap-5" : "gap-2.5", className)}>
-      <LogoMark play={play} className={clsx("shrink-0", lg ? "size-20 sm:size-24" : "size-10 sm:size-11")} />
+    <span
+      className={clsx("inline-flex items-center", lg ? "gap-4 sm:gap-5" : "gap-2.5", className)}
+      onMouseEnter={() => setReplay((n) => n + 1)}
+    >
+      <LogoMark key={replay} play={play} className={clsx("shrink-0", lg ? "size-20 sm:size-24" : "size-10 sm:size-11")} />
       <span className="flex flex-col">
         <span
           className={clsx(
