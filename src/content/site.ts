@@ -35,8 +35,8 @@ export const site = {
     "MagicLife is a software agency welcoming new members. No coding experience needed: earn extra income through client referrals, profit-sharing partnerships and flexible side work, all alongside your current job.",
   url: "https://magiclife.com",
   ogImage: "/brand/magiclife-og.jpg",
-  email: "hello@magiclife.com",
-  location: "Your street address, City, State 00000",
+  email: "support@magiclife.agency",
+  location: "304B Locust St SE, Vienna, VA 22180",
   socials: [
     { label: "Facebook", href: "#", icon: "facebook" },
     { label: "LinkedIn", href: "#", icon: "linkedin" },
