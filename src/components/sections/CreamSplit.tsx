@@ -1,6 +1,7 @@
 import { Check } from "lucide-react";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
+import { MemberButton } from "@/components/member/MemberButton";
 import { PillButton } from "@/components/ui/PillButton";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -33,9 +34,9 @@ export function CreamSplit({ parts = "both" }: CreamSplitProps) {
                   </li>
                 ))}
               </ul>
-              <PillButton href={first.cta.href} variant="dark" className="mt-10">
+              <MemberButton variant="dark" className="mt-10">
                 {first.cta.label}
-              </PillButton>
+              </MemberButton>
             </Reveal>
             <Reveal delay={0.1} className="relative order-1 aspect-[4/3] overflow-hidden rounded-card lg:order-2 lg:aspect-[5/4]">
               <Image src={first.image} alt="" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />

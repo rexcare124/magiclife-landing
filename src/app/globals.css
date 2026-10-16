@@ -24,6 +24,30 @@
 
   --animate-kenburns: kenburns 14s ease-in-out infinite alternate;
   --animate-marquee: marquee 40s linear infinite;
+  --animate-member-pulse: member-pulse 2.2s ease-out infinite;
+  --animate-member-shine: member-shine 2.8s ease-in-out infinite;
+
+  @keyframes member-pulse {
+    0% {
+      box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-gold) 70%, transparent);
+    }
+    70% {
+      box-shadow: 0 0 0 12px transparent;
+    }
+    100% {
+      box-shadow: 0 0 0 0 transparent;
+    }
+  }
+
+  @keyframes member-shine {
+    0%,
+    55% {
+      transform: translateX(-130%);
+    }
+    100% {
+      transform: translateX(130%);
+    }
+  }
 
   @keyframes kenburns {
     from {
@@ -68,6 +92,38 @@ body {
   background: #ffffff;
   color: var(--color-ink);
   font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+.member-dialog {
+  width: min(48rem, calc(100% - 2rem));
+  max-height: calc(100svh - 2rem);
+  margin: auto;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border: none;
+  background: transparent;
+  color: inherit;
+}
+
+.member-dialog::backdrop {
+  background: rgb(5 5 5 / 0.72);
+  backdrop-filter: blur(6px);
+}
+
+.member-dialog[open] {
+  animation: member-dialog-in 0.35s ease;
+}
+
+@keyframes member-dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 h1,

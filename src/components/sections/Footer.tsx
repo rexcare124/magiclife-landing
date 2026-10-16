@@ -2,7 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/ui/Logo";
-import { PillButton } from "@/components/ui/PillButton";
+import { MemberButton } from "@/components/member/MemberButton";
 import { Reveal } from "@/components/ui/Reveal";
 import { SocialIcon } from "@/components/ui/SocialIcon";
 import { footer, nav, quickLinks, site } from "@/content/site";
@@ -31,20 +31,12 @@ export function Footer() {
             <Logo size="lg" play="inView" showSlogan className="mb-10" />
             <h2 className="font-heading text-4xl font-medium tracking-[0.01em] sm:text-5xl">{footer.title}</h2>
             <p className="mt-5 max-w-md text-white/75">{footer.body}</p>
-            <PillButton href={footer.cta.href} className="mt-8">
-              {footer.cta.label}
-            </PillButton>
+            <MemberButton className="mt-8">{footer.cta.label}</MemberButton>
           </div>
 
-          <div className="grid gap-10 sm:grid-cols-2 lg:pt-34">
-            <div>
-              <h3 className="font-display text-lg font-bold text-gold-light">About us</h3>
-              <p className="mt-3 text-white/75">{footer.about}</p>
-            </div>
-            <div>
-              <h3 className="font-display text-lg font-bold text-gold-light">Location</h3>
-              <p className="mt-3 text-white/75">{site.location}</p>
-            </div>
+          <div className="lg:pt-34">
+            <h3 className="font-display text-lg font-bold text-gold-light">About us</h3>
+            <p className="mt-3 max-w-md text-white/75">{footer.about}</p>
           </div>
         </Reveal>
 
@@ -80,9 +72,12 @@ export function Footer() {
                 </ul>
               </div>
               <div>
-                <h3 className="font-display text-lg font-bold text-gold-light">Email</h3>
+                <h3 className="font-display text-lg font-bold text-gold-light">Contact</h3>
                 <a href={`mailto:${site.email}`} className="mt-4 inline-block text-white/75 transition-colors hover:text-gold-light">
                   {site.email}
+                </a>
+                <a href="tel:+19286519982" className="mt-3 inline-block text-white/75 transition-colors hover:text-gold-light">
+                  {site.phone}
                 </a>
               </div>
             </div>

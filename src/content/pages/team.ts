@@ -49,15 +49,8 @@ export const team = {
     title: "Builders, designers and member champions",
     members: [
       {
-        name: "Baldino Aguilar",
-        role: "Lead Developer",
-        bio: "Architects web platforms and APIs for our fastest-growing clients.",
-        image: photo(1),
-        socials: [{ label: "LinkedIn", href: "#" }],
-      },
-      {
         name: "Elena Rossi",
-        role: "Member Success Lead",
+        role: "Account Manager",
         bio: "Helps every new member find the program that fits their life.",
         image: photo(2),
         socials: [
@@ -74,27 +67,13 @@ export const team = {
       },
       {
         name: "Julia Krasytska",
-        role: "UI/UX Designer",
-        bio: "Turns user research into clear, beautiful interfaces.",
+        role: "Consultant",
+        bio: "Helps new members find the program that fits their life.",
         image: photo(4),
         socials: [
           { label: "LinkedIn", href: "#" },
           { label: "Instagram", href: "#" },
         ],
-      },
-      {
-        name: "Maya Petrov",
-        role: "Partnerships Manager",
-        bio: "Works with profit-sharing partners and keeps reporting crystal clear.",
-        image: photo(6),
-        socials: [{ label: "LinkedIn", href: "#" }],
-      },
-      {
-        name: "Lucas Grant",
-        role: "Full-stack Developer",
-        bio: "Ships dashboards, integrations and automation tools end to end.",
-        image: photo(7),
-        socials: [{ label: "LinkedIn", href: "#" }],
       },
       {
         name: "Xinrou Li",

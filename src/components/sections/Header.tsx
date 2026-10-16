@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/ui/Logo";
-import { PillButton } from "@/components/ui/PillButton";
+import { MemberButton } from "@/components/member/MemberButton";
 import { footer, memberCta, nav, site } from "@/content/site";
 
 function isActive(pathname: string, href: string) {
@@ -20,11 +20,15 @@ export function Header() {
   const pathname = usePathname();
 
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
     if (!open) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = previous;
+      window.removeEventListener("keydown", onKey);
+    };
   }, [open]);
 
   return (
@@ -57,9 +61,7 @@ export function Header() {
 
         <div className="flex items-center gap-4">
           <div className="hidden xl:block">
-            <PillButton href={memberCta.href} className="py-1.5! text-sm">
-              {memberCta.label}
-            </PillButton>
+            <MemberButton className="py-1.5! text-sm">{memberCta.label}</MemberButton>
           </div>
           <button
             type="button"
@@ -127,11 +129,19 @@ export function Header() {
               </ul>
               <div className="flex flex-col gap-6 pt-10 sm:flex-row sm:items-end sm:justify-between">
                 <div className="space-y-1 text-white/70">
-                  <p>{site.email}</p>
-                  <p>{site.location}</p>
+                  <p>
+                    <a href={`mailto:${site.email}`} className="transition-colors hover:text-gold-light">
+                      {site.email}
+                    </a>
+                  </p>
+                  <p>
+                    <a href="tel:+19286519982" className="transition-colors hover:text-gold-light">
+                      {site.phone}
+                    </a>
+                  </p>
                 </div>
                 <div onClick={() => setOpen(false)} className="self-start">
-                  <PillButton href={footer.cta.href}>{footer.cta.label}</PillButton>
+                  <MemberButton>{footer.cta.label}</MemberButton>
                 </div>
               </div>
             </Container>

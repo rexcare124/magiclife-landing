@@ -5,7 +5,7 @@ import clsx from "clsx";
 import Image from "next/image";
 import { useId, useState } from "react";
 import { Container } from "@/components/ui/Container";
-import { PillButton } from "@/components/ui/PillButton";
+import { MemberButton } from "@/components/member/MemberButton";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { servicesTabs } from "@/content/site";
@@ -25,9 +25,7 @@ export function ServicesTabs() {
           </div>
           <div className="flex flex-col gap-6 lg:items-end lg:text-right">
             <p className="max-w-sm text-muted">{servicesTabs.footnote}</p>
-            <PillButton href={servicesTabs.cta.href} variant="dark">
-              {servicesTabs.cta.label}
-            </PillButton>
+            <MemberButton variant="dark">{servicesTabs.cta.label}</MemberButton>
           </div>
         </Reveal>
 

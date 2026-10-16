@@ -4,7 +4,7 @@ import { BlogList } from "@/components/blog/BlogList";
 import { PostCard } from "@/components/blog/PostCard";
 import { Container } from "@/components/ui/Container";
 import { PageHero } from "@/components/ui/PageHero";
-import { PillButton } from "@/components/ui/PillButton";
+import { MemberButton } from "@/components/member/MemberButton";
 import { Reveal } from "@/components/ui/Reveal";
 import { blog } from "@/content/pages/blog";
 import { sanityFetch } from "@/sanity/lib/client";
@@ -47,9 +47,9 @@ export default async function BlogPage() {
               </span>
               <h2 className="mt-6 font-heading text-3xl">{blog.empty.title}</h2>
               <p className="mt-3 text-muted">{blog.empty.body}</p>
-              <PillButton href={blog.empty.cta.href} variant="dark" className="mt-8">
+              <MemberButton variant="dark" className="mt-8">
                 {blog.empty.cta.label}
-              </PillButton>
+              </MemberButton>
             </Reveal>
           )}
         </Container>

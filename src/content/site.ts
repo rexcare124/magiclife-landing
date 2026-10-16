@@ -22,9 +22,12 @@ export const images = {
   marketingDesk: img("marketing-desk"),
   planning: img("planning"),
   techTeam: img("tech-team"),
-  avatar1: img("avatar-1"),
-  avatar2: img("avatar-2"),
-  avatar3: img("avatar-3"),
+  member3: img("member-3"),
+  member4: img("member-4"),
+  member5: img("member-5"),
+  member7: img("member-7"),
+  member9: img("member-9"),
+  member10: img("member-10"),
 };
 
 export const site = {
@@ -36,7 +39,7 @@ export const site = {
   url: "https://magiclife.com",
   ogImage: "/brand/magiclife-og.jpg",
   email: "support@magiclife.agency",
-  location: "304B Locust St SE, Vienna, VA 22180",
+  phone: "+1 (928) 651 - 9982",
   socials: [
     { label: "Facebook", href: "#", icon: "facebook" },
     { label: "LinkedIn", href: "#", icon: "linkedin" },
@@ -87,27 +90,6 @@ export const hero = {
       image: images.workspace,
     },
   ],
-};
-
-export const statsIntro = {
-  stat: { value: 3, suffix: "", label: "Ways to earn alongside your current job" },
-  avatars: [images.avatar1, images.avatar2, images.avatar3],
-  trust: "Join a growing community of members",
-  title: "You don't need to write code to be part of a software agency",
-  body: "Our developers build websites, apps and custom software for clients. As a member, you help the agency grow in the way that suits you best, whether that's introducing clients, partnering in our profits or taking on simple paid tasks, and you're rewarded for the value you bring. There's no need to leave your job or learn anything technical.",
-};
-
-export const featureCards = {
-  media: { image: images.teamHuddle, alt: "MagicLife members and team celebrating together" },
-  highlight: {
-    title: "Keep your job. Add a new income.",
-    body: "Membership is designed to fit around your life. Choose how involved you want to be, and earn for the clients, capital or time you contribute.",
-    cta: { label: "See ways to earn", href: "#services" },
-  },
-  showcase: {
-    image: images.office,
-    title: "Real software for real clients",
-  },
 };
 
 export const creamSplit = {

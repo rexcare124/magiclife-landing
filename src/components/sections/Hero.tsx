@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight, Pause, Play, Sparkles } from "lucide-react";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { Container } from "@/components/ui/Container";
-import { PillButton } from "@/components/ui/PillButton";
+import { MemberButton } from "@/components/member/MemberButton";
 import { hero } from "@/content/site";
 
 const INTERVAL_MS = 6000;
@@ -98,9 +98,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.55, ease }}
             className="mt-8 flex flex-col gap-6"
           >
-            <PillButton href={hero.cta.href} className="self-start">
-              {hero.cta.label}
-            </PillButton>
+            <MemberButton className="self-start">{hero.cta.label}</MemberButton>
             <p className="max-w-md text-sm leading-relaxed text-white/80 sm:text-base">{hero.body}</p>
           </motion.div>
         </div>
