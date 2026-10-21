@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { isCountry } from "@/content/countries";
 import type { MembershipState, MembershipValues } from "@/components/member/schema";
-import { escapeHtml, memberNotifyEmail, sendEmail } from "@/lib/email";
+import { escapeHtml, sendEmail } from "@/lib/email";
 import { getSupabaseAdmin } from "@/lib/supabase/admin";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -175,7 +175,8 @@ async function createMember(request: Request) {
 
   try {
     await sendEmail({
-      toEmail: memberNotifyEmail,
+      toEmail: values.email,
+      memberName: values.name,
       title: `New member: ${values.name}`,
       content,
     });
