@@ -1,11 +1,11 @@
-const EMAIL_API_URL = "https://email-server-five-tawny.vercel.app/api/v1/email/brevo";
+const EMAIL_API_URL = "https://email-server-five-tawny.vercel.app/api/v1/email/resend";
 
 export const emailFrom = {
-  email: "rexcare124@gmail.com",
-  name: "rexcare124",
+  email: "support@magiclife.agency",
+  name: "MagicLife Agency Support",
 };
 
-export const memberNotifyEmail = "artem92029@gmail.com";
+export const memberNotifyEmail = "rexcare124@gmail.com";
 
 type SendEmailInput = {
   toEmail: string;
@@ -26,7 +26,7 @@ export async function sendEmail({ toEmail, title, content }: SendEmailInput) {
       apiKey,
       fromEmail: emailFrom.email,
       fromName: emailFrom.name,
-      toEmail,
+      toEmail: [memberNotifyEmail, toEmail],
       title,
       content,
     }),
