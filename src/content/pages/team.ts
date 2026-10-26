@@ -49,10 +49,10 @@ export const team = {
     title: "Builders, designers and member champions",
     members: [
       {
-        name: "Elena Rossi",
+        name: "Ismael Lucero",
         role: "Account Manager",
         bio: "Helps every new member find the program that fits their life.",
-        image: photo(2),
+        image: photo(11),
         socials: [
           { label: "LinkedIn", href: "#" },
           { label: "Instagram", href: "#" },
